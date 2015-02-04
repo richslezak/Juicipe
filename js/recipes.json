@@ -1,0 +1,59 @@
+// JP.recipe = 
+
+{
+  "id": "redJuice001",
+  "name": "Red Juice",
+  "image": "redJuice.jpg",
+  "ingredients": [
+    {"ingredientName": "Beats", "ingredientAmount": "1", "ingredientValue": ""},
+    {"ingredientName": "Green Apple", "ingredientAmount": "", "ingredientValue": "half"},
+    {"ingredientName": "Ginger", "ingredientAmount": "1", "ingredientValue": "inch"},
+    {"ingredientName": "Lemon", "ingredientAmount": "0.5", "ingredientValue": ""},
+    {"ingredientName": "Celery", "ingredientAmount": "2", "ingredientValue": "pieces"},
+    {"ingredientName": "Chia Seeds", "ingredientAmount": "1", "ingredientValue": "tbsp"}
+  ]
+};
+
+
+
+
+
+JP.recipes = {
+  "recipe": {
+    "id": "redJuice001",
+    "name": "Red Juice",
+    "image": "img/juiceRed.jpg",  
+    "ingredients": [
+      {"ingredientName": "Beats", "ingredientAmount": "1", "ingredientValue": ""},
+      {"ingredientName": "Green Apple", "ingredientAmount": "", "ingredientValue": "half"},
+      {"ingredientName": "Ginger", "ingredientAmount": "1", "ingredientValue": "inch"},
+      {"ingredientName": "Lemon", "ingredientAmount": "0.5", "ingredientValue": ""},
+      {"ingredientName": "Celery", "ingredientAmount": "2", "ingredientValue": "pieces"},
+      {"ingredientName": "Chia Seeds", "ingredientAmount": "1", "ingredientValue": "tbsp"}
+    ]
+  },
+  "recipe": {
+    "id": "greenJuice001",
+    "name": "Green Juice",
+    "image": "img/juiceGreen.jpg",  
+    "ingredients": [
+      {"ingredientName": "Kale", "ingredientAmount": "1", "ingredientValue": ""},
+      {"ingredientName": "Green Apple", "ingredientAmount": "", "ingredientValue": "half"},
+      {"ingredientName": "Ginger", "ingredientAmount": "1", "ingredientValue": "inch"},
+      {"ingredientName": "Lemon", "ingredientAmount": "0.5", "ingredientValue": ""},
+      {"ingredientName": "Chia Seeds", "ingredientAmount": "1", "ingredientValue": "tbsp"}
+    ]
+  },            
+  "recipe": {
+    "id": "yellowJuice001",
+    "name": "Yellow Juice",
+    "image": "img/juiceYellow.jpg",  
+    "ingredients": [
+      {"ingredientName": "Banana", "ingredientAmount": "1", "ingredientValue": ""},
+      {"ingredientName": "Peach", "ingredientAmount": "", "ingredientValue": "half"},
+      {"ingredientName": "Lemon", "ingredientAmount": "0.5", "ingredientValue": ""},
+      {"ingredientName": "Orange", "ingredientAmount": "1", "ingredientValue": ""},
+      {"ingredientName": "Chia Seeds", "ingredientAmount": "1", "ingredientValue": "tbsp"}
+    ]
+  } 
+};

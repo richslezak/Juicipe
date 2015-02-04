@@ -14,6 +14,7 @@ This is project that I am building as I am learning new ways to develop
 
 ## Learning Goals
 
+  * GitHub
   * JS
   * AJAX
   * JSON

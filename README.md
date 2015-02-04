@@ -1,29 +1,26 @@
-# Foundation Compass Template
+# Juicipe 
 
-The easiest way to get started with Foundation + Compass.
+This is project that I am building as I am learning new ways to develop
 
-## Requirements
+## Technologies
 
-  * Ruby 1.9+
-  * [Node.js](http://nodejs.org)
-  * [compass](http://compass-style.org/): `gem install compass`
-  * [bower](http://bower.io): `npm install bower -g`
+  * Zurb Foundation 
+  * SASS
+  * Compass
+  * Bower
+  * jQuery
+  * Modernizer
 
-## Quickstart
 
-  * [Download this starter compass project and unzip it](https://github.com/zurb/foundation-compass-template/archive/master.zip)
-  * Run `bower install` to install the latest version of Foundation
-  
-Then when you're working on your project, just run the following command:
+## Learning Goals
 
-```bash
-bundle exec compass watch
-```
+  * JS
+  * AJAX
+  * JSON
+  * SASS
+  * Work flow methods
+  * Terminal use
+  * Shortcuts for faster iteration
 
-## Upgrading
 
-If you'd like to upgrade to a newer version of Foundation down the road just run:
 
-```bash
-bower update
-```

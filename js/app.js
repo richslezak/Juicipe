@@ -96,6 +96,7 @@ title subtitle description image recipe
 
 
 // randomizer for recipes 
+// this will let you set a range to pick random recipes from
 JP.maximum = JP.recipes.length;
 JP.minimum = 0;
 JP.randomNumber = Math.floor(Math.random() * (JP.maximum - JP.minimum)) + JP.minimum;
@@ -110,7 +111,7 @@ JP.randomNumber = Math.floor(Math.random() * (JP.maximum - JP.minimum)) + JP.min
 // parse recipe and build a list
 JP.parseRecipe = function(recipeNumber) {
 
-  var list = $('.recipe .view');
+  var list = $('.recipe .viewRecipe');
   //first clear the existing list
   list.html("");
 
@@ -143,21 +144,92 @@ JP.parseRecipe = function(recipeNumber) {
 
 
 
+// This will handle to page events using browser state
+JP.bindHistoryHandler = function() {
+  History.Adapter.bind(window, 'statechange', function () {
+    var state = History.getState(),
+        uri = new Uri(state.url),
+        recipe = uri.getQueryParamValue('recipe'),
+        action = uri.getQueryParamValue('action'),
+        heading;
+
+    switch (action) {
+      case "home": 
+        heading = 'Home';
+        $('.viewRecipe').show();
+        $('.editRecipe').hide();
+      break;
+
+      case "editRecipe": 
+        heading = 'Edit Recipe';
+        $('.editRecipe').show();
+        $('.viewRecipe').hide();
+      break;        
+
+      case "addRecipe": 
+        heading = 'Add Recipe';
+      break;
+
+      case "shareRecipe": 
+        heading = 'Share Recipe';
+      break; 
+
+      case "account": 
+        heading = 'User Account';
+      break;        
+    }
+
+    
+        
+        // build a clear function that clears the page
+        // build a case statement for dif views 
+        // when user clicks on a link we will first clear the page
+        // then rebuild the page per the query string on the link 
+        // use case statement for dif views.
+
+
+    $('.viewTitle').text(heading);
+
+  });  
+};
+
+// Hijack the click event from all 'a' elements and take control of back and forward events 
+JP.bindLinkHandler = function() {
+  $('body').on('click', 'a', function(e) {
+    e.preventDefault();
+    console.log(e);
+    var href = $(e.target).attr('href');
+    History.pushState(null, "", href);
+  });
+};
 
 
 
 
-//test click buttons etc
-$("#linkTest").on('click', function() {
-  //first clear the existing list
-  //$('.recipe .view').html("");
-  this.preventDefault;
-  JP.parseRecipe(1);
-});
 
-JP.clickRecipe = function(x) {
-  //this.preventDefault;
-  JP.parseRecipe(x);
+
+// //test click buttons etc
+// $("#linkTest").on('click', function() {
+//   //first clear the existing list
+//   //$('.recipe .view').html("");
+//   this.preventDefault;
+//   JP.parseRecipe(1);
+// });
+
+// JP.clickRecipe = function(x) {
+//   //this.preventDefault;
+//   JP.parseRecipe(x);
+// };
+
+
+
+
+// use Init to store functions and then use Init in dom ready and keep dom ready space minimally occupied. 
+JP.init = function() {
+  JP.parseRecipe(JP.randomNumber);
+  JP.bindLinkHandler();
+  JP.bindHistoryHandler();
+  $('.editRecipe').hide();
 };
 
 
@@ -170,7 +242,8 @@ JP.clickRecipe = function(x) {
 
 $(document).ready( function() {
   $(document).foundation();
-  JP.parseRecipe(JP.randomNumber);
+  JP.init();
+  
 
 
 
